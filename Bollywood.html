@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Bollywood</title>
+		<script type="text/javascript" src="./bollywood.js"></script>
+		<script type="text/javascript" src="F:\ishaan\Learn And Grow\WEB Development\JavaScript for Web Development by Telusko\jQ\jQuery\jquery-3.4.1.js"></script>
+	</head>
+	<body>
+		<h1>New Game</h1>
+		<div id="input">
+			<div>
+		
+				<label>Ener new movie.
+					<input type="text" id="movie" name="movie" required>	<!-- Taking movie form user as input, it is a required input -->
+				</label><br>
+		
+				<label>Hint Actor 1 (Female)
+					<input type="text" id="actor1" name="actor1">			<!-- Hint: Input female actor of the movie.-->
+				</label><br>
+		
+				<label>Hint Actor 2 (Male)
+					<input type="text" id="actor2" name="actor2">			<!-- Hint : Input male actor of the movie -->
+				</label><br>
+		
+				<label>Hint Song
+					<input type="text" id="song" name="song">				<!-- Hint: Song of the movie -->
+				</label><br>
+				<button type="submit" id="submit" onclick="collectData()">Submit</button><br>
+			</div>
+<!-- 			<div>
+				<br><br>Movie: <span id="movie_test"></span><br>
+						moviearr: <span id="movie_testarr"></span><br>
+						Hint1: <span id="hint1_test"></span><br>
+						Hint2: <span id="hint2_test"></span><br>
+						Hint3(Song): <span id="hint3_test"></span>
+			</div>-->
+			</div>
+					<br><br><br><br>
+		<div id="guess">
+			<button onclick="guess()">Display Movie</button>							<!-- After clicking this movies fill be displed -->
+					
+					<div>
+				 <br><br><!--Movie: <span id="movie_test"></span><br> -->
+						<!-- moviearr: <span id="movie_testarr"></span><br> -->
+						Hint1: <span id="hint1_test"></span><br>
+						Hint2: <span id="hint2_test"></span><br>
+						Hint3(Song): <span id="hint3_test"></span>
+			</div>
+					<br><br><br><br>
+			<h1 id="displayMovie">Movie will be displayed here</h1>			
+					<br><br>
+			<div>
+				<label>Guess a character
+					<input type="text" id="guesschar" name="guesschar" required="">
+				</label>
+				<button type="submit" id="submitChar" onclick="guesschar()">Submit</button>		<!-- submit a character to guess -->
+			</div>
+					<br><br><br><br>
+			<div id="errorbox" >
+				No Errors											<!-- check for any error or remark -->
+			</div>
+		</div>
+
+
+</body>
+
+	<script type="text/javascript">
+		$('#guess').hide();											//This will hide what is already written "Movies will be displayed here"
+		// $('#errorbox').hide();
+		$("#submit").click(function(){
+  		$("#guess").show();											//This will display the movie on the same place where "Movie will be displayed here" is written
+  		$("#input").hide();											//This will hide the form
+		});
+		$('submitChar').click(function() {
+			$('#errorbox').show();
+		});
+	</script>
+
+</html>
+
+<!-- How to suggest auto complete for movie, actors, songs -->
